@@ -1,0 +1,425 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9530B2E417C63D7100F00D6F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9530B2E317C63D7100F00D6F /* UIKit.framework */; };
+		9530B2E617C63D7100F00D6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9530B2E517C63D7100F00D6F /* Foundation.framework */; };
+		9530B2E817C63D7100F00D6F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9530B2E717C63D7100F00D6F /* CoreGraphics.framework */; };
+		9530B2EE17C63D7100F00D6F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9530B2EC17C63D7100F00D6F /* InfoPlist.strings */; };
+		9530B2F017C63D7100F00D6F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9530B2EF17C63D7100F00D6F /* main.m */; };
+		9530B2F417C63D7100F00D6F /* ANAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9530B2F317C63D7100F00D6F /* ANAppDelegate.m */; };
+		9530B2F617C63D7100F00D6F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9530B2F517C63D7100F00D6F /* Default.png */; };
+		9530B2F817C63D7100F00D6F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9530B2F717C63D7100F00D6F /* Default@2x.png */; };
+		9530B2FA17C63D7100F00D6F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9530B2F917C63D7100F00D6F /* Default-568h@2x.png */; };
+		9530B30117C63D9000F00D6F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9530B30017C63D9000F00D6F /* MainStoryboard.storyboard */; };
+		9530B30417C63DA500F00D6F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9530B30217C63DA500F00D6F /* GLKit.framework */; };
+		9530B30517C63DA500F00D6F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9530B30317C63DA500F00D6F /* OpenGLES.framework */; };
+		9530B30717C63DAC00F00D6F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9530B30617C63DAC00F00D6F /* QuartzCore.framework */; };
+		9530B31917C640EF00F00D6F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9530B31817C640EF00F00D6F /* Icon.png */; };
+		9530B31B17C640F400F00D6F /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9530B31A17C640F400F00D6F /* Icon@2x.png */; };
+		9530B31E17C6432000F00D6F /* ANFishnetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9530B31D17C6432000F00D6F /* ANFishnetViewController.m */; };
+		9530B32217C649CE00F00D6F /* ANNodeRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 9530B32117C649CE00F00D6F /* ANNodeRender.m */; };
+		9530B32917C6500300F00D6F /* NodeTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 9530B32717C6500300F00D6F /* NodeTexture.png */; };
+		9530B32A17C6500300F00D6F /* NodeTexture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9530B32817C6500300F00D6F /* NodeTexture@2x.png */; };
+		9530B32F17C6734000F00D6F /* ANNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9530B32E17C6734000F00D6F /* ANNode.m */; };
+		95B342DB17D4C13800920BFB /* ANPhysicalSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B342DA17D4C13800920BFB /* ANPhysicalSystem.m */; };
+		95B342DF17D4C84500920BFB /* ANLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B342DE17D4C84500920BFB /* ANLine.m */; };
+		95B342E217D4C84F00920BFB /* ANLineRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B342E117D4C84F00920BFB /* ANLineRender.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9530B2E017C63D7100F00D6F /* Fishnet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fishnet.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		9530B2E317C63D7100F00D6F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		9530B2E517C63D7100F00D6F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9530B2E717C63D7100F00D6F /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		9530B2EB17C63D7100F00D6F /* Fishnet-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Fishnet-Info.plist"; sourceTree = "<group>"; };
+		9530B2ED17C63D7100F00D6F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9530B2EF17C63D7100F00D6F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9530B2F117C63D7100F00D6F /* Fishnet-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fishnet-Prefix.pch"; sourceTree = "<group>"; };
+		9530B2F217C63D7100F00D6F /* ANAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANAppDelegate.h; sourceTree = "<group>"; };
+		9530B2F317C63D7100F00D6F /* ANAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANAppDelegate.m; sourceTree = "<group>"; };
+		9530B2F517C63D7100F00D6F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		9530B2F717C63D7100F00D6F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		9530B2F917C63D7100F00D6F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		9530B30017C63D9000F00D6F /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
+		9530B30217C63DA500F00D6F /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
+		9530B30317C63DA500F00D6F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		9530B30617C63DAC00F00D6F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		9530B31817C640EF00F00D6F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
+		9530B31A17C640F400F00D6F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
+		9530B31C17C6432000F00D6F /* ANFishnetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANFishnetViewController.h; sourceTree = "<group>"; };
+		9530B31D17C6432000F00D6F /* ANFishnetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANFishnetViewController.m; sourceTree = "<group>"; };
+		9530B32017C649CE00F00D6F /* ANNodeRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANNodeRender.h; sourceTree = "<group>"; };
+		9530B32117C649CE00F00D6F /* ANNodeRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANNodeRender.m; sourceTree = "<group>"; };
+		9530B32717C6500300F00D6F /* NodeTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NodeTexture.png; sourceTree = "<group>"; };
+		9530B32817C6500300F00D6F /* NodeTexture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NodeTexture@2x.png"; sourceTree = "<group>"; };
+		9530B32D17C6734000F00D6F /* ANNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANNode.h; sourceTree = "<group>"; };
+		9530B32E17C6734000F00D6F /* ANNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANNode.m; sourceTree = "<group>"; };
+		95B342D917D4C13700920BFB /* ANPhysicalSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPhysicalSystem.h; sourceTree = "<group>"; };
+		95B342DA17D4C13800920BFB /* ANPhysicalSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANPhysicalSystem.m; sourceTree = "<group>"; };
+		95B342DD17D4C84400920BFB /* ANLine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANLine.h; sourceTree = "<group>"; };
+		95B342DE17D4C84500920BFB /* ANLine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANLine.m; sourceTree = "<group>"; };
+		95B342E017D4C84F00920BFB /* ANLineRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANLineRender.h; sourceTree = "<group>"; };
+		95B342E117D4C84F00920BFB /* ANLineRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANLineRender.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9530B2DD17C63D7100F00D6F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9530B30717C63DAC00F00D6F /* QuartzCore.framework in Frameworks */,
+				9530B30417C63DA500F00D6F /* GLKit.framework in Frameworks */,
+				9530B30517C63DA500F00D6F /* OpenGLES.framework in Frameworks */,
+				9530B2E417C63D7100F00D6F /* UIKit.framework in Frameworks */,
+				9530B2E617C63D7100F00D6F /* Foundation.framework in Frameworks */,
+				9530B2E817C63D7100F00D6F /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9530B2D717C63D7100F00D6F = {
+			isa = PBXGroup;
+			children = (
+				9530B2E917C63D7100F00D6F /* Fishnet */,
+				9530B2E217C63D7100F00D6F /* Frameworks */,
+				9530B2E117C63D7100F00D6F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9530B2E117C63D7100F00D6F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9530B2E017C63D7100F00D6F /* Fishnet.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9530B2E217C63D7100F00D6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9530B30617C63DAC00F00D6F /* QuartzCore.framework */,
+				9530B30217C63DA500F00D6F /* GLKit.framework */,
+				9530B30317C63DA500F00D6F /* OpenGLES.framework */,
+				9530B2E317C63D7100F00D6F /* UIKit.framework */,
+				9530B2E517C63D7100F00D6F /* Foundation.framework */,
+				9530B2E717C63D7100F00D6F /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9530B2E917C63D7100F00D6F /* Fishnet */ = {
+			isa = PBXGroup;
+			children = (
+				9530B32317C649D700F00D6F /* App Delegate */,
+				9530B32417C649E100F00D6F /* Models */,
+				9530B31F17C6432600F00D6F /* View Controller */,
+				9530B30017C63D9000F00D6F /* MainStoryboard.storyboard */,
+				9530B32617C6500300F00D6F /* Resources */,
+				9530B2EA17C63D7100F00D6F /* Supporting Files */,
+			);
+			path = Fishnet;
+			sourceTree = "<group>";
+		};
+		9530B2EA17C63D7100F00D6F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9530B2EB17C63D7100F00D6F /* Fishnet-Info.plist */,
+				9530B2EC17C63D7100F00D6F /* InfoPlist.strings */,
+				9530B2EF17C63D7100F00D6F /* main.m */,
+				9530B2F117C63D7100F00D6F /* Fishnet-Prefix.pch */,
+				9530B2F517C63D7100F00D6F /* Default.png */,
+				9530B2F717C63D7100F00D6F /* Default@2x.png */,
+				9530B2F917C63D7100F00D6F /* Default-568h@2x.png */,
+				9530B31A17C640F400F00D6F /* Icon@2x.png */,
+				9530B31817C640EF00F00D6F /* Icon.png */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9530B31F17C6432600F00D6F /* View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9530B31C17C6432000F00D6F /* ANFishnetViewController.h */,
+				9530B31D17C6432000F00D6F /* ANFishnetViewController.m */,
+			);
+			name = "View Controller";
+			sourceTree = "<group>";
+		};
+		9530B32317C649D700F00D6F /* App Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				9530B2F217C63D7100F00D6F /* ANAppDelegate.h */,
+				9530B2F317C63D7100F00D6F /* ANAppDelegate.m */,
+			);
+			name = "App Delegate";
+			sourceTree = "<group>";
+		};
+		9530B32417C649E100F00D6F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				95B342DC17D4C13C00920BFB /* PhysicalSystem */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		9530B32517C649E800F00D6F /* Node */ = {
+			isa = PBXGroup;
+			children = (
+				9530B32017C649CE00F00D6F /* ANNodeRender.h */,
+				9530B32117C649CE00F00D6F /* ANNodeRender.m */,
+				9530B32D17C6734000F00D6F /* ANNode.h */,
+				9530B32E17C6734000F00D6F /* ANNode.m */,
+			);
+			name = Node;
+			sourceTree = "<group>";
+		};
+		9530B32617C6500300F00D6F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9530B32717C6500300F00D6F /* NodeTexture.png */,
+				9530B32817C6500300F00D6F /* NodeTexture@2x.png */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		95B342DC17D4C13C00920BFB /* PhysicalSystem */ = {
+			isa = PBXGroup;
+			children = (
+				95B342E417D5BD1600920BFB /* System */,
+				95B342E317D4C85400920BFB /* Line */,
+				9530B32517C649E800F00D6F /* Node */,
+			);
+			name = PhysicalSystem;
+			sourceTree = "<group>";
+		};
+		95B342E317D4C85400920BFB /* Line */ = {
+			isa = PBXGroup;
+			children = (
+				95B342DD17D4C84400920BFB /* ANLine.h */,
+				95B342DE17D4C84500920BFB /* ANLine.m */,
+				95B342E017D4C84F00920BFB /* ANLineRender.h */,
+				95B342E117D4C84F00920BFB /* ANLineRender.m */,
+			);
+			name = Line;
+			sourceTree = "<group>";
+		};
+		95B342E417D5BD1600920BFB /* System */ = {
+			isa = PBXGroup;
+			children = (
+				95B342D917D4C13700920BFB /* ANPhysicalSystem.h */,
+				95B342DA17D4C13800920BFB /* ANPhysicalSystem.m */,
+			);
+			name = System;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9530B2DF17C63D7100F00D6F /* Fishnet */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9530B2FD17C63D7100F00D6F /* Build configuration list for PBXNativeTarget "Fishnet" */;
+			buildPhases = (
+				9530B2DC17C63D7100F00D6F /* Sources */,
+				9530B2DD17C63D7100F00D6F /* Frameworks */,
+				9530B2DE17C63D7100F00D6F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Fishnet;
+			productName = Fishnet;
+			productReference = 9530B2E017C63D7100F00D6F /* Fishnet.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9530B2D817C63D7100F00D6F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = AN;
+				LastUpgradeCheck = 0460;
+				ORGANIZATIONNAME = "Andrew Zhuk";
+			};
+			buildConfigurationList = 9530B2DB17C63D7100F00D6F /* Build configuration list for PBXProject "Fishnet" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9530B2D717C63D7100F00D6F;
+			productRefGroup = 9530B2E117C63D7100F00D6F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9530B2DF17C63D7100F00D6F /* Fishnet */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9530B2DE17C63D7100F00D6F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9530B2EE17C63D7100F00D6F /* InfoPlist.strings in Resources */,
+				9530B2F617C63D7100F00D6F /* Default.png in Resources */,
+				9530B2F817C63D7100F00D6F /* Default@2x.png in Resources */,
+				9530B2FA17C63D7100F00D6F /* Default-568h@2x.png in Resources */,
+				9530B30117C63D9000F00D6F /* MainStoryboard.storyboard in Resources */,
+				9530B31917C640EF00F00D6F /* Icon.png in Resources */,
+				9530B31B17C640F400F00D6F /* Icon@2x.png in Resources */,
+				9530B32917C6500300F00D6F /* NodeTexture.png in Resources */,
+				9530B32A17C6500300F00D6F /* NodeTexture@2x.png in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9530B2DC17C63D7100F00D6F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9530B2F017C63D7100F00D6F /* main.m in Sources */,
+				9530B2F417C63D7100F00D6F /* ANAppDelegate.m in Sources */,
+				9530B31E17C6432000F00D6F /* ANFishnetViewController.m in Sources */,
+				9530B32217C649CE00F00D6F /* ANNodeRender.m in Sources */,
+				9530B32F17C6734000F00D6F /* ANNode.m in Sources */,
+				95B342DB17D4C13800920BFB /* ANPhysicalSystem.m in Sources */,
+				95B342DF17D4C84500920BFB /* ANLine.m in Sources */,
+				95B342E217D4C84F00920BFB /* ANLineRender.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9530B2EC17C63D7100F00D6F /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9530B2ED17C63D7100F00D6F /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9530B2FB17C63D7100F00D6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		9530B2FC17C63D7100F00D6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9530B2FE17C63D7100F00D6F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Fishnet/Fishnet-Prefix.pch";
+				INFOPLIST_FILE = "Fishnet/Fishnet-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9530B2FF17C63D7100F00D6F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Fishnet/Fishnet-Prefix.pch";
+				INFOPLIST_FILE = "Fishnet/Fishnet-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 2;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9530B2DB17C63D7100F00D6F /* Build configuration list for PBXProject "Fishnet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9530B2FB17C63D7100F00D6F /* Debug */,
+				9530B2FC17C63D7100F00D6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9530B2FD17C63D7100F00D6F /* Build configuration list for PBXNativeTarget "Fishnet" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9530B2FE17C63D7100F00D6F /* Debug */,
+				9530B2FF17C63D7100F00D6F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9530B2D817C63D7100F00D6F /* Project object */;
+}
