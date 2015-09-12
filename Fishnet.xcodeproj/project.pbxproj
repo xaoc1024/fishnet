@@ -7,25 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5CF87DA31BA4C70A00C12AAC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5CF87DA21BA4C70A00C12AAC /* Images.xcassets */; };
 		9530B2E417C63D7100F00D6F /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9530B2E317C63D7100F00D6F /* UIKit.framework */; };
 		9530B2E617C63D7100F00D6F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9530B2E517C63D7100F00D6F /* Foundation.framework */; };
 		9530B2E817C63D7100F00D6F /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9530B2E717C63D7100F00D6F /* CoreGraphics.framework */; };
 		9530B2EE17C63D7100F00D6F /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9530B2EC17C63D7100F00D6F /* InfoPlist.strings */; };
 		9530B2F017C63D7100F00D6F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9530B2EF17C63D7100F00D6F /* main.m */; };
 		9530B2F417C63D7100F00D6F /* ANAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9530B2F317C63D7100F00D6F /* ANAppDelegate.m */; };
-		9530B2F617C63D7100F00D6F /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 9530B2F517C63D7100F00D6F /* Default.png */; };
-		9530B2F817C63D7100F00D6F /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9530B2F717C63D7100F00D6F /* Default@2x.png */; };
-		9530B2FA17C63D7100F00D6F /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9530B2F917C63D7100F00D6F /* Default-568h@2x.png */; };
 		9530B30117C63D9000F00D6F /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9530B30017C63D9000F00D6F /* MainStoryboard.storyboard */; };
 		9530B30417C63DA500F00D6F /* GLKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9530B30217C63DA500F00D6F /* GLKit.framework */; };
 		9530B30517C63DA500F00D6F /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9530B30317C63DA500F00D6F /* OpenGLES.framework */; };
 		9530B30717C63DAC00F00D6F /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9530B30617C63DAC00F00D6F /* QuartzCore.framework */; };
-		9530B31917C640EF00F00D6F /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 9530B31817C640EF00F00D6F /* Icon.png */; };
-		9530B31B17C640F400F00D6F /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9530B31A17C640F400F00D6F /* Icon@2x.png */; };
 		9530B31E17C6432000F00D6F /* ANFishnetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9530B31D17C6432000F00D6F /* ANFishnetViewController.m */; };
 		9530B32217C649CE00F00D6F /* ANNodeRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 9530B32117C649CE00F00D6F /* ANNodeRender.m */; };
-		9530B32917C6500300F00D6F /* NodeTexture.png in Resources */ = {isa = PBXBuildFile; fileRef = 9530B32717C6500300F00D6F /* NodeTexture.png */; };
-		9530B32A17C6500300F00D6F /* NodeTexture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9530B32817C6500300F00D6F /* NodeTexture@2x.png */; };
 		9530B32F17C6734000F00D6F /* ANNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 9530B32E17C6734000F00D6F /* ANNode.m */; };
 		95B342DB17D4C13800920BFB /* ANPhysicalSystem.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B342DA17D4C13800920BFB /* ANPhysicalSystem.m */; };
 		95B342DF17D4C84500920BFB /* ANLine.m in Sources */ = {isa = PBXBuildFile; fileRef = 95B342DE17D4C84500920BFB /* ANLine.m */; };
@@ -33,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5CF87DA21BA4C70A00C12AAC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		9530B2E017C63D7100F00D6F /* Fishnet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Fishnet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9530B2E317C63D7100F00D6F /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		9530B2E517C63D7100F00D6F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -43,21 +38,14 @@
 		9530B2F117C63D7100F00D6F /* Fishnet-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Fishnet-Prefix.pch"; sourceTree = "<group>"; };
 		9530B2F217C63D7100F00D6F /* ANAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ANAppDelegate.h; sourceTree = "<group>"; };
 		9530B2F317C63D7100F00D6F /* ANAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ANAppDelegate.m; sourceTree = "<group>"; };
-		9530B2F517C63D7100F00D6F /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		9530B2F717C63D7100F00D6F /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
-		9530B2F917C63D7100F00D6F /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		9530B30017C63D9000F00D6F /* MainStoryboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = MainStoryboard.storyboard; sourceTree = "<group>"; };
 		9530B30217C63DA500F00D6F /* GLKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLKit.framework; path = System/Library/Frameworks/GLKit.framework; sourceTree = SDKROOT; };
 		9530B30317C63DA500F00D6F /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		9530B30617C63DAC00F00D6F /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
-		9530B31817C640EF00F00D6F /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Icon.png; path = ../Icon.png; sourceTree = "<group>"; };
-		9530B31A17C640F400F00D6F /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Icon@2x.png"; path = "../Icon@2x.png"; sourceTree = "<group>"; };
 		9530B31C17C6432000F00D6F /* ANFishnetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANFishnetViewController.h; sourceTree = "<group>"; };
 		9530B31D17C6432000F00D6F /* ANFishnetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANFishnetViewController.m; sourceTree = "<group>"; };
 		9530B32017C649CE00F00D6F /* ANNodeRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANNodeRender.h; sourceTree = "<group>"; };
 		9530B32117C649CE00F00D6F /* ANNodeRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANNodeRender.m; sourceTree = "<group>"; };
-		9530B32717C6500300F00D6F /* NodeTexture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NodeTexture.png; sourceTree = "<group>"; };
-		9530B32817C6500300F00D6F /* NodeTexture@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "NodeTexture@2x.png"; sourceTree = "<group>"; };
 		9530B32D17C6734000F00D6F /* ANNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANNode.h; sourceTree = "<group>"; };
 		9530B32E17C6734000F00D6F /* ANNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ANNode.m; sourceTree = "<group>"; };
 		95B342D917D4C13700920BFB /* ANPhysicalSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ANPhysicalSystem.h; sourceTree = "<group>"; };
@@ -123,6 +111,7 @@
 				9530B31F17C6432600F00D6F /* View Controller */,
 				9530B30017C63D9000F00D6F /* MainStoryboard.storyboard */,
 				9530B32617C6500300F00D6F /* Resources */,
+				5CF87DA21BA4C70A00C12AAC /* Images.xcassets */,
 				9530B2EA17C63D7100F00D6F /* Supporting Files */,
 			);
 			path = Fishnet;
@@ -135,11 +124,6 @@
 				9530B2EC17C63D7100F00D6F /* InfoPlist.strings */,
 				9530B2EF17C63D7100F00D6F /* main.m */,
 				9530B2F117C63D7100F00D6F /* Fishnet-Prefix.pch */,
-				9530B2F517C63D7100F00D6F /* Default.png */,
-				9530B2F717C63D7100F00D6F /* Default@2x.png */,
-				9530B2F917C63D7100F00D6F /* Default-568h@2x.png */,
-				9530B31A17C640F400F00D6F /* Icon@2x.png */,
-				9530B31817C640EF00F00D6F /* Icon.png */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -184,8 +168,6 @@
 		9530B32617C6500300F00D6F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				9530B32717C6500300F00D6F /* NodeTexture.png */,
-				9530B32817C6500300F00D6F /* NodeTexture@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -273,14 +255,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				9530B2EE17C63D7100F00D6F /* InfoPlist.strings in Resources */,
-				9530B2F617C63D7100F00D6F /* Default.png in Resources */,
-				9530B2F817C63D7100F00D6F /* Default@2x.png in Resources */,
-				9530B2FA17C63D7100F00D6F /* Default-568h@2x.png in Resources */,
+				5CF87DA31BA4C70A00C12AAC /* Images.xcassets in Resources */,
 				9530B30117C63D9000F00D6F /* MainStoryboard.storyboard in Resources */,
-				9530B31917C640EF00F00D6F /* Icon.png in Resources */,
-				9530B31B17C640F400F00D6F /* Icon@2x.png in Resources */,
-				9530B32917C6500300F00D6F /* NodeTexture.png in Resources */,
-				9530B32A17C6500300F00D6F /* NodeTexture@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -377,9 +353,12 @@
 		9530B2FE17C63D7100F00D6F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Fishnet/Fishnet-Prefix.pch";
 				INFOPLIST_FILE = "Fishnet/Fishnet-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;
@@ -389,9 +368,12 @@
 		9530B2FF17C63D7100F00D6F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Fishnet/Fishnet-Prefix.pch";
 				INFOPLIST_FILE = "Fishnet/Fishnet-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 2;
 				WRAPPER_EXTENSION = app;

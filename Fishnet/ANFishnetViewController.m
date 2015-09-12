@@ -92,7 +92,7 @@ static NSUInteger const kANFishnetHeigth = 5;
 - (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {    
     [EAGLContext setCurrentContext: self.context];
     
-    glClearColor(0, 1, 1, 1);
+    glClearColor(1, 1, 1, 1);
     glClear(GL_COLOR_BUFFER_BIT);
     
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
