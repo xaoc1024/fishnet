@@ -67,7 +67,7 @@ static NSUInteger const kANFishnetHeigth = 5;
     UIImage * nodeImage = [UIImage imageNamed:@"NodeTexture"];
     assert(nodeImage);
     
-    self.nodeRender = [[ANNodeRender alloc] initWithImage: nodeImage effect: self.nodesEffect];
+    self.nodeRender = [[ANNodeRender alloc] initWithImage:nodeImage effect:self.nodesEffect];
     
     self.preferredFramesPerSecond = 60.0f;
 }
@@ -97,6 +97,7 @@ static NSUInteger const kANFishnetHeigth = 5;
     
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     glEnable(GL_BLEND);
+    
     // draw lines
     [self.lineRender renderPreparedLines];
     
@@ -104,7 +105,7 @@ static NSUInteger const kANFishnetHeigth = 5;
     ANNode *node;
     [self.system resetNodeIterator];
     while ((node = [self.system getNextNode])) {
-        [self.nodeRender renderNode: node];
+        [self.nodeRender renderNode:node];
     }
 }
 
