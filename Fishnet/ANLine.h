@@ -24,10 +24,8 @@ typedef struct {
 @property (assign) CGPoint startNodeLocation;
 @property (assign) CGPoint endNodeLocation;
 
-- (id) initWithLineCoordinates: (ANLineCoordinates) coordinates
-           startNodeLocation: (CGPoint) start
-             endNodeLocation: (CGPoint) end;
+- (id)initWithLineCoordinates:(ANLineCoordinates)coordinates startNodeLocation:(CGPoint)start endNodeLocation:(CGPoint)end;
 
-- (float) lineDisplacement;
+- (float)lineDisplacement;
 
 @end

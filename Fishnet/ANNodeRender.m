@@ -73,6 +73,9 @@ typedef struct {
         quad.tl.textureVertex = ANPointMake(0, 1);
         quad.tr.textureVertex = ANPointMake(1, 1);
         self.quad = quad;
+        
+        self.effect.texture2d0.name = self.textureInfo.name;
+        self.effect.texture2d0.enabled = YES;
     }
     return self;
 }
@@ -82,18 +85,16 @@ typedef struct {
     modelMatrix = GLKMatrix4Translate(modelMatrix, position.x, position.y, 0);
     
     return GLKMatrix4Translate(modelMatrix,
-                              - self.contentSize.width / 2,
-                              - self.contentSize.height / 2,
+                              - _contentSize.width / 2,
+                              - _contentSize.height / 2,
                               0);
 }
 
 - (void)renderNode:(ANNode *)node {
-    self.effect.texture2d0.name = self.textureInfo.name;
-    self.effect.texture2d0.enabled = YES;
     
-    self.effect.transform.modelviewMatrix = [self modelMatrixForPosition:node.position];
+    _effect.transform.modelviewMatrix = [self modelMatrixForPosition:node.position];
     
-    [self.effect prepareToDraw];
+    [_effect prepareToDraw];
     
     glEnableVertexAttribArray(GLKVertexAttribPosition);
     glEnableVertexAttribArray(GLKVertexAttribTexCoord0);

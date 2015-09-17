@@ -16,7 +16,8 @@ static float const kANWeigth = 2.0f; // kg;
 
 @implementation ANNode
 
-- (id) initWithPosition: (GLKVector2) position {
+- (id)initWithPosition:(GLKVector2)position
+{
     self = [super init];
     if (self){
         self.position = position;
@@ -26,12 +27,14 @@ static float const kANWeigth = 2.0f; // kg;
     return self;
 }
 
-- (void) setMotionVector:(GLKVector2)motionVector {
+- (void)setMotionVector:(GLKVector2)motionVector
+{
     // if user drags the node, motion vector will be zero vector.
     _motionVector = (_isManaged) ? GLKVector2Make(0.0f, 0.0f) : motionVector;
 }
 
-- (void) setIsManaged:(BOOL)isManaged {
+- (void)setIsManaged:(BOOL)isManaged
+{
     _isManaged = isManaged;
     
     if (isManaged){
@@ -39,7 +42,8 @@ static float const kANWeigth = 2.0f; // kg;
     }
 }
 
-- (void) processMotion {
+- (void)processMotion
+{
     if (!self.isManaged && self.isMovable){
         self.position = GLKVector2Add(self.position, self.motionVector);
     }

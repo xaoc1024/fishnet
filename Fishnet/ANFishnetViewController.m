@@ -35,7 +35,7 @@ static NSUInteger const kANFishnetHeigth = 5;
 - (void) viewDidLoad {
     [super viewDidLoad];
     
-    self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
+    self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
     
     if (!self.context) {
         NSLog(@"Failed to create ES context");
@@ -43,6 +43,10 @@ static NSUInteger const kANFishnetHeigth = 5;
     
     [self initGL];
     [self initSystem];
+    
+    GLKView *glkView = (GLKView*)self.view;
+    glkView.drawableMultisample = GLKViewDrawableMultisample4X;
+
 }
 
 - (void) initGL {
@@ -69,7 +73,7 @@ static NSUInteger const kANFishnetHeigth = 5;
     
     self.nodeRender = [[ANNodeRender alloc] initWithImage:nodeImage effect:self.nodesEffect];
     
-    self.preferredFramesPerSecond = 60.0f;
+    self.preferredFramesPerSecond = 30.0f;
 }
 
 - (void) initSystem {
@@ -89,8 +93,9 @@ static NSUInteger const kANFishnetHeigth = 5;
 
 #pragma mark - GLKViewDelegate
 
-- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect {    
-    [EAGLContext setCurrentContext: self.context];
+- (void)glkView:(GLKView *)view drawInRect:(CGRect)rect
+{
+    [EAGLContext setCurrentContext:_context];
     
     glClearColor(1, 1, 1, 1);
     glClear(GL_COLOR_BUFFER_BIT);
@@ -99,25 +104,28 @@ static NSUInteger const kANFishnetHeigth = 5;
     glEnable(GL_BLEND);
     
     // draw lines
-    [self.lineRender renderPreparedLines];
+    [_lineRender renderPreparedLines];
     
     // draw nodes
     ANNode *node;
-    [self.system resetNodeIterator];
-    while ((node = [self.system getNextNode])) {
-        [self.nodeRender renderNode:node];
+    [_system resetNodeIterator];
+    while ((node = [_system getNextNode])) {
+        [_nodeRender renderNode:node];
     }
 }
 
-- (void)update {
-    [self.system processSystemWithTime: self.timeSinceLastUpdate];
-    [self.lineRender prepareForRenderingWithLines: self.system.lines];
+- (void)update
+{
+    [_system processSystemWithTime: 1.0/30.0];
+    [_lineRender prepareForRenderingWithLines: _system.lines];
 }
 
 #pragma mark - user interaction
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
-    CGRect				bounds = [self.view bounds];
-    UITouch*	touch = [[event touchesForView:self.view] anyObject];
+
+- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    CGRect bounds = [self.view bounds];
+    UITouch *touch = [[event touchesForView:self.view] anyObject];
     
     CGPoint location = [touch locationInView:self.view];
 	location.y = bounds.size.height - location.y;
@@ -126,7 +134,8 @@ static NSUInteger const kANFishnetHeigth = 5;
     self.currentNode.isManaged = YES;
 }
 
-- (void) touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
     CGRect	bounds = [self.view bounds];
     UITouch * touch = [[event touchesForView: self.view] anyObject];
     

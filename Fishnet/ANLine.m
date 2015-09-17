@@ -9,7 +9,7 @@
 #import "ANLine.h"
 #import <GLKit/GLKit.h>
 
-static float const kANStiffness = 2; // newtons per metre
+static float const kANStiffness = 2.0; // newtons per metre
 
 @interface ANLine ()
 
@@ -38,11 +38,13 @@ static float const kANStiffness = 2; // newtons per metre
     return self;
 }
 
-- (float) lineDisplacement {
-    return GLKVector2Distance(self.lineCoordinates.endPoint, self.lineCoordinates.startPoint) - self.lineLength;    
+- (float)lineDisplacement
+{
+    return GLKVector2Distance(_lineCoordinates.endPoint, _lineCoordinates.startPoint) - _lineLength;
 }
 
-- (void) setLineCoordinates: (ANLineCoordinates) lineCoordinates {
+- (void) setLineCoordinates: (ANLineCoordinates) lineCoordinates
+{
     _lineCoordinates = lineCoordinates;   
 }
 
