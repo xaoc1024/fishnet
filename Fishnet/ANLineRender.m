@@ -19,32 +19,39 @@
 
 @implementation ANLineRender
 
-- (id) initWithBaseEffect: (GLKBaseEffect *) effect {
+- (id) initWithBaseEffect: (GLKBaseEffect *) effect
+{
     self = [super init];
-    if (self){
+
+    if (self != nil)
+    {
         self.effect = effect;
         self.effect.useConstantColor = GL_TRUE;        
         // Make the line a black color
-        self.effect.constantColor = GLKVector4Make( 0.0f,
-                                                    0.0f,
-                                                    0.0f,
-                                                    1.0f);
+        self.effect.constantColor = GLKVector4Make(0.0, 0.0, 0.0, 1.0);
     }
+
     return self;
 }
 
-- (void) prepareForRenderingWithLines:(NSArray *)linesArray {
+- (void)prepareForRenderingWithLines:(NSArray *)linesArray
+{
     NSAssert(linesArray.count, @"Array shouldn't be empty");
     
-    if (self.linesCount == 0) {
+    if (self.linesCount == 0)
+    {
         self.linesCount = linesArray.count;
         // create data storage for lines
         _linesData = calloc(_linesCount, sizeof(ANLineCoordinates));
-    } else if (_linesCount != linesArray.count){
+    }
+    else if (_linesCount != linesArray.count)
+    {
         NSAssert(0, @"Render was fed with different data this and previous times. Data must be the same.");
     }
+
     // copy data to storage
-    for (int i = 0; i < _linesCount; ++i) {
+    for (int i = 0; i < _linesCount; ++i)
+    {
         _linesData[i] = ((ANLine *)linesArray[i]).lineCoordinates;
     }
 }

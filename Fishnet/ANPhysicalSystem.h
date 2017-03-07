@@ -13,18 +13,16 @@
 
 @interface ANPhysicalSystem : NSObject
 
-@property (assign, readonly) NSUInteger linesAmount;
-@property (assign) float nodeSize;
+@property (nonatomic, assign, readonly) NSUInteger linesAmount;
+@property (nonatomic, assign) float nodeSize;
 
-- (void) createNodeSystemWithHorizontalAmount: (NSUInteger) width
-                               verticalAmount: (NSUInteger) height
-                                   screenSize: (CGSize) size;
-- (ANNode *) getNextNode;
+- (void)createNodeSystemWithHorizontalAmount:(NSUInteger)width verticalAmount:(NSUInteger)height screenSize:(CGSize)size;
+- (ANNode*)getNextNode;
 
-- (NSArray *) lines;
+- (NSArray*)lines;
 
-- (void) resetNodeIterator;
-- (void) processSystemWithTime: (float) timeSinceLastUpdate;
-- (ANNode *) findNodeForScreenLocation:(CGPoint) location;
+- (void)resetNodeIterator;
+- (void)processSystemWithTime:(float)timeSinceLastUpdate;
+- (ANNode*)findNodeForScreenLocation:(CGPoint)location;
 
 @end

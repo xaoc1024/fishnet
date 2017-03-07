@@ -28,8 +28,8 @@
 @property (assign) BOOL isMovable;
 @property (nonatomic, assign) BOOL isManaged;
 
-- (id) initWithPosition: (GLKVector2) position;
+- (id)initWithPosition: (GLKVector2) position;
 
-- (void) processMotion;
+- (void)processMotion;
 
 @end

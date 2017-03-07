@@ -34,9 +34,11 @@ typedef struct {
 
 @implementation ANPhysicalSystem
 
-- (id)init {
+- (id)init
+{
     self = [super init];
-    if (self) {
+    if (self)
+    {
         _nodeIterator = 0;
     }
     return self;
@@ -53,7 +55,8 @@ typedef struct {
     
     // creating matrix with nodes: memory allocation
     _nodesMatrix = calloc(height, sizeof(void *));
-    for (int i = 0; i < height; i++){
+    for (int i = 0; i < height; i++)
+    {
         _nodesMatrix[i] = calloc(width, sizeof(void *));
     }
     
@@ -65,12 +68,12 @@ typedef struct {
     {
         for (int j = 0; j < width; j++)
         {
-            GLKVector2 pos = GLKVector2Make(j * kANIdent + horizontalIndent,
-                                            theScreenSize.height - (kANIdent * i + verticalIndent / 2));
+            GLKVector2 pos = GLKVector2Make(j * kANIdent + horizontalIndent, theScreenSize.height - (kANIdent * i + verticalIndent / 2));
             
             ANNode * node = [[ANNode alloc] initWithPosition: pos];
             node.identifier = (i * width) + j + 1;
-            if (node.identifier ==  width  || node.identifier == 1) {
+            if (node.identifier ==  width  || node.identifier == 1)
+            {
                 node.isMovable = NO;
             }
             _nodesMatrix[i][j] = (void *)CFBridgingRetain(node);
@@ -80,25 +83,27 @@ typedef struct {
     [self generateLines];
 }
 
-- (void) generateLines {    
+- (void) generateLines
+{
     ANLineCoordinates coords;
     ANLine * line;
     NSMutableArray *linesArray = [NSMutableArray array];
     
     // setting up horizontal lines
     ANNode * leftNode;
+
     ANNode * rightNode;    
-    for (int i = 0; i < self.matrixSize.height; i++) {
-        for (int j = 0; j < self.matrixSize.width - 1; j++) {
+    for (int i = 0; i < self.matrixSize.height; i++)
+    {
+        for (int j = 0; j < self.matrixSize.width - 1; j++)
+        {
             leftNode = (__bridge ANNode *)(_nodesMatrix[i][j]);
             rightNode = (__bridge ANNode *)(_nodesMatrix[i][j + 1]);
             
             coords.startPoint = leftNode.position;
             coords.endPoint = rightNode.position;
             
-            line = [[ANLine alloc] initWithLineCoordinates: coords
-                                         startNodeLocation: CGPointMake(i, j)
-                                           endNodeLocation: CGPointMake(i, j + 1)];
+            line = [[ANLine alloc] initWithLineCoordinates:coords startNodeLocation:CGPointMake(i, j)endNodeLocation:CGPointMake(i, j + 1)];
             [linesArray addObject: line];
             
             // make neighbors
@@ -110,17 +115,17 @@ typedef struct {
     // setting up vertical lines
     ANNode * upperNode;
     ANNode * lowerNode;
-    for (int j = 0; j < self.matrixSize.width; j++) {
-        for (int i = 0; i < self.matrixSize.height - 1; i++) {
+    for (int j = 0; j < self.matrixSize.width; j++)
+    {
+        for (int i = 0; i < self.matrixSize.height - 1; i++)
+        {
             upperNode = (__bridge ANNode *)(_nodesMatrix[i][j]);
             lowerNode = (__bridge ANNode *)(_nodesMatrix[i + 1][j]);
             
             coords.startPoint = upperNode.position;
             coords.endPoint = lowerNode.position;
             
-            line = [[ANLine alloc] initWithLineCoordinates: coords
-                                         startNodeLocation: CGPointMake(i, j)
-                                           endNodeLocation: CGPointMake(i + 1, j)];
+            line = [[ANLine alloc] initWithLineCoordinates: coords startNodeLocation: CGPointMake(i, j) endNodeLocation: CGPointMake(i + 1, j)];
             [linesArray addObject:line];
             
             // make neighbors
@@ -132,35 +137,44 @@ typedef struct {
     self.linesArray = linesArray;
 }
 
-#pragma mark - getters
-- (ANNode *) getNextNode {
+#pragma mark - Getters
+
+- (ANNode*)getNextNode
+{
     NSUInteger i, j;
     
     i = (self.nodeIterator / self.matrixSize.width);
     
     j = self.nodeIterator - (i * self.matrixSize.width);
+
     self.nodeIterator++;
     
     return (self.matrixSize.width > j && self.matrixSize.height > i) ? ((__bridge ANNode *)(_nodesMatrix[i][j])) : nil;
 }
 
-- (NSArray *) lines {
+- (NSArray*)lines
+{
     return _linesArray;
 }
 
-- (void) resetNodeIterator {
+- (void)resetNodeIterator
+{
     self.nodeIterator = 0;
 }
 
-- (ANNode *) findNodeForScreenLocation:(CGPoint) location {
+- (ANNode *) findNodeForScreenLocation:(CGPoint) location
+{
     ANNode * cn; // current node;
     GLKVector2 locationVector = GLKVector2Make(location.x, location.y);
     float dist;
     
-    for (int i = 0; i < self.matrixSize.height; i++) {
-        for (int j = 0; j < self.matrixSize.width; j++) {
+    for (int i = 0; i < self.matrixSize.height; i++)
+    {
+        for (int j = 0; j < self.matrixSize.width; j++)
+        {
             cn = (__bridge ANNode *)(_nodesMatrix[i][j]);
-            if ((dist = GLKVector2Distance(cn.position, locationVector)) <= self.nodeSize / 2.0f) {
+            if ((dist = GLKVector2Distance(cn.position, locationVector)) <= self.nodeSize / 2.0)
+            {
                 return cn;
             }
         }
@@ -169,17 +183,22 @@ typedef struct {
 }
 
 #pragma mark - processing system
-- (void) processSystemWithTime:(float)timeSinceLastUpdate {
+
+- (void) processSystemWithTime:(float)timeSinceLastUpdate
+{
     [self calculateForces];
     [self processMotionWithTime:timeSinceLastUpdate];
     [self updateLines];
 }
 
-- (void) calculateForces {
+- (void)calculateForces
+{
     ANNode * cn; // current node;
     
-    for (int i = 0; i < _matrixSize.height; i++) {
-        for (int j = 0; j < _matrixSize.width; j++) {
+    for (int i = 0; i < _matrixSize.height; i++)
+    {
+        for (int j = 0; j < _matrixSize.width; j++)
+        {
             cn = (__bridge ANNode *)(_nodesMatrix[i][j]);
             
             // calculating all forces
@@ -213,14 +232,13 @@ typedef struct {
     {
         lineDisplacement = 0;
     }
-    // Using Hooks law to calculate force comminted by line to node;
+
+    // Using Hooks law to calculate force commited by line to node
     float hookForce = lineDisplacement * line.stiffness;
     GLKVector2 lineVector;
     
-    lineVector = (lineStartsInThisNode) ? GLKVector2Make(line.lineCoordinates.endPoint.x - line.lineCoordinates.startPoint.x,
-                                                         line.lineCoordinates.endPoint.y - line.lineCoordinates.startPoint.y) :
-                                          GLKVector2Make(line.lineCoordinates.startPoint.x - line.lineCoordinates.endPoint.x,
-                                                         line.lineCoordinates.startPoint.y - line.lineCoordinates.endPoint.y);
+    lineVector = (lineStartsInThisNode) ? GLKVector2Make(line.lineCoordinates.endPoint.x - line.lineCoordinates.startPoint.x, line.lineCoordinates.endPoint.y - line.lineCoordinates.startPoint.y) : GLKVector2Make(line.lineCoordinates.startPoint.x - line.lineCoordinates.endPoint.x,
+        line.lineCoordinates.startPoint.y - line.lineCoordinates.endPoint.y);
     
     lineVector = GLKVector2Normalize(lineVector);
     GLKVector2 hookForceVector = GLKVector2MultiplyScalar(lineVector, hookForce);
@@ -236,22 +254,24 @@ typedef struct {
         for (int j = 0; j < _matrixSize.width; j++)
         {
             cn = (__bridge ANNode *)(_nodesMatrix[i][j]);
+
             // calculating speed of node motion using Newton second law
-            cn.motionVector = GLKVector2Add(cn.motionVector, GLKVector2MultiplyScalar(cn.forceVector, (1.0f / cn.weight) * timeSinceLastUpdate));
+            cn.motionVector = GLKVector2Add(cn.motionVector, GLKVector2MultiplyScalar(cn.forceVector, (1.0 / cn.weight) * timeSinceLastUpdate));
             // simulating friction force
-            cn.motionVector = GLKVector2Subtract(cn.motionVector,
-                                                 GLKVector2MultiplyScalar(cn.motionVector, kANAttenuation));
+            cn.motionVector = GLKVector2Subtract(cn.motionVector, GLKVector2MultiplyScalar(cn.motionVector, kANAttenuation));
             // shifting node position considering motion vector
             [cn processMotion];
         }
     }
 }
 
-- (void) updateLines {
+- (void)updateLines
+{
     NSUInteger i, j;
     ANLineCoordinates coords;
     
-    for (ANLine * line in _linesArray) {
+    for (ANLine * line in _linesArray)
+    {
         // looking for line's start node indeces in matrix
         i = line.startNodeLocation.x;
         j = line.startNodeLocation.y;
@@ -267,13 +287,19 @@ typedef struct {
     }
 }
 
-- (void) dealloc {
+#pragma mark - dealloc
+
+- (void) dealloc
+{
     // releasing matrix;
     if (_nodesMatrix != nil){
-        for (int i = 0; i < self.matrixSize.height; i++) {
-            for (int j = 0; j < self.matrixSize.width; j++) {
+        for (int i = 0; i < self.matrixSize.height; i++)
+        {
+            for (int j = 0; j < self.matrixSize.width; j++)
+            {
                 CFRelease(_nodesMatrix[i][j]);
             }
+            
             free(_nodesMatrix[i]);
         }
     }

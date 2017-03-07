@@ -12,9 +12,9 @@
 
 @interface ANLineRender : NSObject
 
-- (id) initWithBaseEffect:(GLKBaseEffect *)effect;
+- (instancetype)initWithBaseEffect:(GLKBaseEffect*)effect;
 
-- (void) prepareForRenderingWithLines:(NSArray *) linesArray;
-- (void) renderPreparedLines;
+- (void)prepareForRenderingWithLines:(NSArray*)linesArray;
+- (void)renderPreparedLines;
 
 @end

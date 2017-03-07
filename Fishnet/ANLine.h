@@ -19,10 +19,10 @@ typedef struct {
 @property (nonatomic, assign) ANLineCoordinates lineCoordinates;
 
 @property (nonatomic, assign, readonly) float lineLength;
-@property (assign) float stiffness;
+@property (nonatomic, assign) float stiffness;
 
-@property (assign) CGPoint startNodeLocation;
-@property (assign) CGPoint endNodeLocation;
+@property (nonatomic, assign) CGPoint startNodeLocation;
+@property (nonatomic, assign) CGPoint endNodeLocation;
 
 - (id)initWithLineCoordinates:(ANLineCoordinates)coordinates startNodeLocation:(CGPoint)start endNodeLocation:(CGPoint)end;
 

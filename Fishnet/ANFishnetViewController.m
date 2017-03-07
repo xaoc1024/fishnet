@@ -12,8 +12,8 @@
 #import "ANPhysicalSystem.h"
 #import "ANLineRender.h"
 
-static NSUInteger const kANFishnetWidth = 7;
-static NSUInteger const kANFishnetHeigth = 5;
+static NSUInteger const kANFishnetWidth = 3;
+static NSUInteger const kANFishnetHeigth = 1;
 
 @interface ANFishnetViewController ()
 
@@ -32,24 +32,28 @@ static NSUInteger const kANFishnetHeigth = 5;
 
 @implementation ANFishnetViewController
 
-- (void) viewDidLoad {
+- (void) viewDidLoad
+{
     [super viewDidLoad];
     
     self.context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES3];
     
-    if (!self.context) {
+    if (!self.context)
+    {
         NSLog(@"Failed to create ES context");
+        return;
     }
     
     [self initGL];
     [self initSystem];
     
-    GLKView *glkView = (GLKView*)self.view;
+    GLKView* glkView = (GLKView*)self.view;
     glkView.drawableMultisample = GLKViewDrawableMultisample4X;
 
 }
 
-- (void) initGL {
+- (void) initGL
+{
     GLKView *view = (GLKView *)self.view;
     view.context = self.context;
     [EAGLContext setCurrentContext:self.context];
@@ -57,12 +61,7 @@ static NSUInteger const kANFishnetHeigth = 5;
     self.nodesEffect = [[GLKBaseEffect alloc] init];
     self.linesEffect = [[GLKBaseEffect alloc] init];
     CGSize screenSize = self.view.bounds.size;
-    GLKMatrix4 projectionMatrix = GLKMatrix4MakeOrtho(0.0f,
-                                                      screenSize.width,
-                                                      0.0f,
-                                                      screenSize.height,
-                                                      -1024.0f,
-                                                      1024.0f);
+    GLKMatrix4 projectionMatrix = GLKMatrix4MakeOrtho(0.0, screenSize.width, 0.0, screenSize.height, -1024.0, 1024.0);
     
     self.nodesEffect.transform.projectionMatrix = projectionMatrix;
     self.linesEffect.transform.projectionMatrix = projectionMatrix;
@@ -73,7 +72,7 @@ static NSUInteger const kANFishnetHeigth = 5;
     
     self.nodeRender = [[ANNodeRender alloc] initWithImage:nodeImage effect:self.nodesEffect];
     
-    self.preferredFramesPerSecond = 30.0f;
+    self.preferredFramesPerSecond = 60.0;
 }
 
 - (void) initSystem {
@@ -81,9 +80,7 @@ static NSUInteger const kANFishnetHeigth = 5;
     
     self.system.nodeSize = self.nodeRender.contentSize.height;
     
-    [self.system createNodeSystemWithHorizontalAmount: kANFishnetWidth
-                                       verticalAmount: kANFishnetHeigth
-                                           screenSize: self.view.bounds.size];
+    [self.system createNodeSystemWithHorizontalAmount: kANFishnetWidth verticalAmount: kANFishnetHeigth screenSize: self.view.bounds.size];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
@@ -109,20 +106,21 @@ static NSUInteger const kANFishnetHeigth = 5;
     // draw nodes
     ANNode *node;
     [_system resetNodeIterator];
-    while ((node = [_system getNextNode])) {
+    while ((node = [_system getNextNode]))
+    {
         [_nodeRender renderNode:node];
     }
 }
 
 - (void)update
 {
-    [_system processSystemWithTime: 1.0/30.0];
+    [_system processSystemWithTime: 1.0/self.preferredFramesPerSecond];
     [_lineRender prepareForRenderingWithLines: _system.lines];
 }
 
 #pragma mark - user interaction
 
-- (void) touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     CGRect bounds = [self.view bounds];
     UITouch *touch = [[event touchesForView:self.view] anyObject];
@@ -130,16 +128,16 @@ static NSUInteger const kANFishnetHeigth = 5;
     CGPoint location = [touch locationInView:self.view];
 	location.y = bounds.size.height - location.y;
     
-    self.currentNode = [self.system findNodeForScreenLocation: location];
+    self.currentNode = [self.system findNodeForScreenLocation:location];
     self.currentNode.isManaged = YES;
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
-    CGRect	bounds = [self.view bounds];
-    UITouch * touch = [[event touchesForView: self.view] anyObject];
+    CGRect bounds = [self.view bounds];
+    UITouch* touch = [[event touchesForView:self.view] anyObject];
     
-    CGPoint location = [touch locationInView: self.view];
+    CGPoint location = [touch locationInView:self.view];
     location.y = bounds.size.height - location.y;
     
     GLKVector2 position = GLKVector2Make(location.x, location.y);

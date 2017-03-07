@@ -25,16 +25,16 @@ static float const kANStiffness = 2.0; // newtons per metre
 {
     self = [super init];
     
-    if (self){
+    if (self != nil)
+    {
         self.lineCoordinates = coordinates;
         self.startNodeLocation = start;
         self.endNodeLocation = end;
         self.stiffness = kANStiffness;
               
-        self.lineLength = GLKVector2Distance(coordinates.startPoint,
-                                             coordinates.endPoint);
+        self.lineLength = GLKVector2Distance(coordinates.startPoint, coordinates.endPoint);
     }
-    
+
     return self;
 }
 

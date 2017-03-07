@@ -42,9 +42,11 @@ typedef struct {
 @end
 
 @implementation ANNodeRender
+
 - (id)initWithImage:(UIImage *)image effect:(GLKBaseEffect *)effect
 {
-    if ((self = [super init])) {
+    if ((self = [super init]))
+    {
         self.effect = effect;
         
         NSDictionary * options = [NSDictionary dictionaryWithObjectsAndKeys:[NSNumber numberWithBool:YES], GLKTextureLoaderOriginBottomLeft, nil];
@@ -80,7 +82,8 @@ typedef struct {
     return self;
 }
 
-- (GLKMatrix4) modelMatrixForPosition: (GLKVector2) position {
+- (GLKMatrix4) modelMatrixForPosition: (GLKVector2) position
+{
     GLKMatrix4 modelMatrix = GLKMatrix4Identity;
     modelMatrix = GLKMatrix4Translate(modelMatrix, position.x, position.y, 0);
     
@@ -90,11 +93,11 @@ typedef struct {
                               0);
 }
 
-- (void)renderNode:(ANNode *)node {
+- (void)renderNode:(ANNode *)node
+{
+    self.effect.transform.modelviewMatrix = [self modelMatrixForPosition:node.position];
     
-    _effect.transform.modelviewMatrix = [self modelMatrixForPosition:node.position];
-    
-    [_effect prepareToDraw];
+    [self.effect prepareToDraw];
     
     glEnableVertexAttribArray(GLKVertexAttribPosition);
     glEnableVertexAttribArray(GLKVertexAttribTexCoord0);

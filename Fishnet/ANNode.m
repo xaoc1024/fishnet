@@ -19,11 +19,14 @@ static float const kANWeigth = 2.0f; // kg;
 - (id)initWithPosition:(GLKVector2)position
 {
     self = [super init];
-    if (self){
+
+    if (self != nil)
+    {
         self.position = position;
         self.weight = kANWeigth;
         self.isMovable = YES;
     }
+
     return self;
 }
 
@@ -37,18 +40,21 @@ static float const kANWeigth = 2.0f; // kg;
 {
     _isManaged = isManaged;
     
-    if (isManaged){
+    if (isManaged)
+    {
         self.motionVector = GLKVector2Make(0.0f, 0.0f);
     }
 }
 
 - (void)processMotion
 {
-    if (!self.isManaged && self.isMovable){
+    if (!self.isManaged && self.isMovable)
+    {
         self.position = GLKVector2Add(self.position, self.motionVector);
     }
     
-    if (_position.y <= 0) {
+    if (_position.y <= 0)
+    {
         _position.y = 0;
         _motionVector.y = - _motionVector.y;
     }
